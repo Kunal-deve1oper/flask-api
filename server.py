@@ -10,7 +10,6 @@ def create_app():
     app = Flask(__name__)
     CORS(app)
 
-    # Load the pre-trained CNN model
     cnn = tf.keras.models.load_model('model/dog_cat_car_model.keras')
 
     @app.route('/', methods=['POST'])
