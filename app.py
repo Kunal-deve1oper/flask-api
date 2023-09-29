@@ -46,6 +46,10 @@ def predict():
 
     return jsonify({"predictions": results})
 
+@app.route("/", methods=["GET"])
+def test():
+    return jsonify({"data" : "hELLO"})
+
 
 if __name__ == '__main__':
     app.run()
