@@ -10,7 +10,7 @@ from tensorflow.keras.applications.resnet50 import preprocess_input, decode_pred
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app)
 
 model = ResNet50(weights="imagenet")
 
@@ -29,7 +29,7 @@ def predict():
     test_image = image.resize((224, 224))  # Resize to match model input size
     test_image = np.array(test_image)
     test_image = np.expand_dims(test_image, axis=0)
-
+    print("hello")
     x = preprocess_input(test_image)
 
     # Make predictions
