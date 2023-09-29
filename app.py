@@ -10,7 +10,7 @@ from tensorflow.keras.applications.resnet50 import preprocess_input, decode_pred
 
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 model = ResNet50(weights="imagenet")
 
