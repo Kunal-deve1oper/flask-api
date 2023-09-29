@@ -7,7 +7,6 @@ import base64
 from io import BytesIO
 from tensorflow.keras.applications import ResNet50
 from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
-import numpy as np
 
 
 app = Flask(__name__)
@@ -49,4 +48,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run()
