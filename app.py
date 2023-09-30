@@ -5,14 +5,14 @@ import numpy as np
 import tensorflow as tf
 import base64
 from io import BytesIO
-from tensorflow.keras.applications import ResNet50
-from tensorflow.keras.applications.resnet50 import preprocess_input, decode_predictions
+from tensorflow.keras.applications import MobileNetV3Small
+from tensorflow.keras.applications.mobilenet_v3 import preprocess_input, decode_predictions
 
 
 app = Flask(__name__)
 CORS(app)
 
-model = ResNet50(weights="imagenet")
+model = MobileNetV3Small(weights="imagenet")
 
 
 @app.route("/", methods=["POST"])
@@ -52,4 +52,4 @@ def test():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=False)
